@@ -1,0 +1,1 @@
+This app will randomly generate an 8-128 character password. Users can choose whether to include upper-case letters, lower-case letters, numbers, and/or special characters in the pool of potential characters. 
