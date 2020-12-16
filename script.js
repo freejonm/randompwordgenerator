@@ -3,10 +3,10 @@ var generateBtn = document.querySelector("#generate");
 var pwordField = document.querySelector("#password");
 
 
-var charSetUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var charSetLower = "abcdefghijklmnopqrstuvwxyz";
-var num = "0123456789";
-var special = "!@#$%&";
+var charUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var charLower = "abcdefghijklmnopqrstuvwxyz";
+var charNum = "0123456789";
+var charSpecial = "!@#$%&";
 
 
 function getPassword(){
@@ -24,142 +24,103 @@ function getPassword(){
 
   var passWordEl = '';
 
-// All possible characters
-  if((hasUpperC === true) && (hasLowerC === true) && (hasNum === true) && (hasSpecial === true)){
-    var possibleChars = charSetUpper + charSetLower + num + special;
-
+  function randomize(possibleChars){
     for(var i = 0; i < length; i++){
       passWordEl += possibleChars.charAt(Math.floor(Math.random() * possibleChars.length));
     } 
+  }
+
+// All possible characters
+  if((hasUpperC === true) && (hasLowerC === true) && (hasNum === true) && (hasSpecial === true)){
+    var possibleChars = charUpper + charLower + charNum + charSpecial;
+    randomize(possibleChars);
   }
 
 // Only upper-case letters
   if((hasUpperC === true) && (hasLowerC === false) && (hasNum === false) && (hasSpecial === false)){
-    var possibleChars = charSetUpper;
-
-    for(var i = 0; i < length; i++){
-      passWordEl += possibleChars.charAt(Math.floor(Math.random() * possibleChars.length));
-    } 
+    var possibleChars = charUpper;
+    randomize(possibleChars);
   }
 
 // Only lower-case letters
   if((hasUpperC === false) && (hasLowerC === true) && (hasNum === false) && (hasSpecial === false)){
-    var possibleChars = charSetLower;
-
-    for(var i = 0; i < length; i++){
-      passWordEl += possibleChars.charAt(Math.floor(Math.random() * possibleChars.length));
-    } 
+    var possibleChars = charLower;
+    randomize(possibleChars);
   }
 
   // Only numbers
   if((hasUpperC === false) && (hasLowerC === false) && (hasNum === true) && (hasSpecial === false)){
-    var possibleChars = num;
-
-    for(var i = 0; i < length; i++){
-      passWordEl += possibleChars.charAt(Math.floor(Math.random() * possibleChars.length));
-    } 
+    var possibleChars = charNum;
+    randomize(possibleChars);
   }
 
   // Only special characters
   if((hasUpperC === false) && (hasLowerC === false) && (hasNum === false) && (hasSpecial === true)){
-      var possibleChars = special;
-  
-      for(var i = 0; i < length; i++){
-        passWordEl += possibleChars.charAt(Math.floor(Math.random() * possibleChars.length));
-      } 
+      var possibleChars = charSpecial;
+      randomize(possibleChars);
   }
-
+  
   // Upper and lower-case letters
   if((hasUpperC === true) && (hasLowerC === true) && (hasNum === false) && (hasSpecial === false)){
-    var possibleChars = charSetUpper + charSetLower;
-
-    for(var i = 0; i < length; i++){
-      passWordEl += possibleChars.charAt(Math.floor(Math.random() * possibleChars.length));
-    } 
+    var possibleChars = charUpper + charLower;
+    randomize(possibleChars);
   }
 
   // Upper-case letters and numbers
   if((hasUpperC === true) && (hasLowerC === false) && (hasNum === true) && (hasSpecial === false)){
-    var possibleChars = charSetUpper + num;
-
-    for(var i = 0; i < length; i++){
-      passWordEl += possibleChars.charAt(Math.floor(Math.random() * possibleChars.length));
-    } 
+    var possibleChars = charUpper + charNum;
+    randomize(possibleChars);
   }
 
   // Upper-case letters and special characters
   if((hasUpperC === true) && (hasLowerC === false) && (hasNum === false) && (hasSpecial === true)){
-    var possibleChars = charSetUpper + special;
-
-    for(var i = 0; i < length; i++){
-      passWordEl += possibleChars.charAt(Math.floor(Math.random() * possibleChars.length));
-    } 
+    var possibleChars = charUpper + charSpecial;
+    randomize(possibleChars);
   }
 
   // Lower-case letters and numbers
   if((hasUpperC === false) && (hasLowerC === true) && (hasNum === true) && (hasSpecial === false)){
-    var possibleChars = charSetUpper + special;
-
-    for(var i = 0; i < length; i++){
-      passWordEl += possibleChars.charAt(Math.floor(Math.random() * possibleChars.length));
-    } 
+    var possibleChars = charLower + charNum;
+    randomize(possibleChars);
   }
 
    // Lower-case letters and special characters
    if((hasUpperC === false) && (hasLowerC === true) && (hasNum === false) && (hasSpecial === true)){
-    var possibleChars = charSetUpper + special;
-
-    for(var i = 0; i < length; i++){
-      passWordEl += possibleChars.charAt(Math.floor(Math.random() * possibleChars.length));
-    } 
+    var possibleChars = charLower + charSpecial;
+    randomize(possibleChars);
   }
-
-    // Numbers and special characters
+    // // Numbers and special characters
     if((hasUpperC === false) && (hasLowerC === false) && (hasNum === true) && (hasSpecial === true)){
-      var possibleChars = charSetUpper + special;
-  
-      for(var i = 0; i < length; i++){
-        passWordEl += possibleChars.charAt(Math.floor(Math.random() * possibleChars.length));
-      } 
+      var possibleChars = charNum + charSpecial;
+      randomize(possibleChars);
     }
 
-     // All but upper-case 
+    //  // All but upper-case 
      if((hasUpperC === false) && (hasLowerC === true) && (hasNum === true) && (hasSpecial === true)){
-      var possibleChars = charSetLower + num + special;
-  
-      for(var i = 0; i < length; i++){
-        passWordEl += possibleChars.charAt(Math.floor(Math.random() * possibleChars.length));
-      } 
+      var possibleChars = charLower + charNum + charSpecial;
+      randomize(possibleChars);
     }
-
-    // All but lower-case 
+  
+    // // All but lower-case 
     if((hasUpperC === true) && (hasLowerC === false) && (hasNum === true) && (hasSpecial === true)){
-      var possibleChars = charSetUpper + num + special;
-  
-      for(var i = 0; i < length; i++){
-        passWordEl += possibleChars.charAt(Math.floor(Math.random() * possibleChars.length));
-      } 
+      var possibleChars = charUpper + charNum + charSpecial;
+      randomize(possibleChars);
     }
 
-    // All but numbers
+    // // All but numbers
     if((hasUpperC === true) && (hasLowerC === true) && (hasNum === false) && (hasSpecial === true)){
-      var possibleChars = charSetUpper + charSetLower + special;
-  
-      for(var i = 0; i < length; i++){
-        passWordEl += possibleChars.charAt(Math.floor(Math.random() * possibleChars.length));
-      } 
+      var possibleChars = charUpper + charLower + charSpecial;
+      randomize(possibleChars);
     }
 
-    // All but special characters
-       if((hasUpperC === true) && (hasLowerC === true) && (hasNum === true) && (hasSpecial === false)){
-        var possibleChars = charSetUpper + charSetLower + num;
-    
-        for(var i = 0; i < length; i++){
-          passWordEl += possibleChars.charAt(Math.floor(Math.random() * possibleChars.length));
-        } 
+    // // All but special characters
+    if((hasUpperC === true) && (hasLowerC === true) && (hasNum === true) && (hasSpecial === false)){
+        var possibleChars = charUpper + charLower + charNum; 
+        randomize(possibleChars);
       }
+    
 
-      // Null choices
+    //   // Null choices
       if((hasUpperC === false) && (hasLowerC === false) && (hasNum === false) && (hasSpecial === false)){
         alert("You must choose at least one type of character.");
         getPassword();
