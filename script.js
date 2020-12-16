@@ -1,7 +1,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 var pwordField = document.querySelector("#password");
-
+var headChange = document.querySelector("h2");
 
 var charUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var charLower = "abcdefghijklmnopqrstuvwxyz";
@@ -125,8 +125,9 @@ function getPassword(){
         alert("You must choose at least one type of character.");
         getPassword();
         } 
-    
-  pwordField.textContent = "Your password is " + passWordEl;
+  
+  headChange.textContent = "Here you go: a random password, you sneaky sneak.";
+  pwordField.textContent = passWordEl;
 }
 
 // Add event listener to generate button
