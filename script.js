@@ -17,10 +17,10 @@ function getPassword(){
     getPassword();
   }
   
-  var hasUpperC = confirm("Click OK to add upper case letters to the potential characters.");
-  var hasLowerC = confirm("Click on OK to add lower case letters to the potential characters.");
-  var hasNum = confirm("Click OK to add numbers to the potential characters.");
-  var hasSpecial = confirm("Cick OK to add special characters to potential characters.");
+  var hasUpperC = confirm("Click OK to add upper case letters to the potential characters. Cancel to exclude.");
+  var hasLowerC = confirm("Click on OK to add lower case letters to the potential characters. Cancel to exclude.");
+  var hasNum = confirm("Click OK to add numbers to the potential characters. Cancel to exclude.");
+  var hasSpecial = confirm("Cick OK to add special characters to potential characters. Cancel to exclude.");
 
   var passWordEl = '';
 
