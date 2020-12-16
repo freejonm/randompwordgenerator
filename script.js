@@ -17,10 +17,10 @@ function getPassword(){
     getPassword();
   }
   
-  var hasUpperC = confirm("Click OK to potentially include upper case letters.");
-  var hasLowerC = confirm("Click on OK to potentially include lower case letters.");
-  var hasNum = confirm("Click OK to potentially include numbers.");
-  var hasSpecial = confirm("Cick OK to potentialy include special characters.");
+  var hasUpperC = confirm("Click OK to add upper case letters to the potential characters.");
+  var hasLowerC = confirm("Click on OK to add lower case letters to the potential characters.");
+  var hasNum = confirm("Click OK to add numbers to the potential characters.");
+  var hasSpecial = confirm("Cick OK to add special characters to potential characters.");
 
   var passWordEl = '';
 
@@ -28,7 +28,7 @@ function getPassword(){
   if((hasUpperC === true) && (hasLowerC === true) && (hasNum === true) && (hasSpecial === true)){
     var possibleChars = charSetUpper + charSetLower + num + special;
 
-    for(var i = 0; i <= length; i++){
+    for(var i = 0; i < length; i++){
       passWordEl += possibleChars.charAt(Math.floor(Math.random() * possibleChars.length));
     } 
   }
@@ -37,7 +37,7 @@ function getPassword(){
   if((hasUpperC === true) && (hasLowerC === false) && (hasNum === false) && (hasSpecial === false)){
     var possibleChars = charSetUpper;
 
-    for(var i = 0; i <= length; i++){
+    for(var i = 0; i < length; i++){
       passWordEl += possibleChars.charAt(Math.floor(Math.random() * possibleChars.length));
     } 
   }
@@ -46,7 +46,7 @@ function getPassword(){
   if((hasUpperC === false) && (hasLowerC === true) && (hasNum === false) && (hasSpecial === false)){
     var possibleChars = charSetLower;
 
-    for(var i = 0; i <= length; i++){
+    for(var i = 0; i < length; i++){
       passWordEl += possibleChars.charAt(Math.floor(Math.random() * possibleChars.length));
     } 
   }
@@ -55,7 +55,7 @@ function getPassword(){
   if((hasUpperC === false) && (hasLowerC === false) && (hasNum === true) && (hasSpecial === false)){
     var possibleChars = num;
 
-    for(var i = 0; i <= length; i++){
+    for(var i = 0; i < length; i++){
       passWordEl += possibleChars.charAt(Math.floor(Math.random() * possibleChars.length));
     } 
   }
@@ -64,7 +64,7 @@ function getPassword(){
   if((hasUpperC === false) && (hasLowerC === false) && (hasNum === false) && (hasSpecial === true)){
       var possibleChars = special;
   
-      for(var i = 0; i <= length; i++){
+      for(var i = 0; i < length; i++){
         passWordEl += possibleChars.charAt(Math.floor(Math.random() * possibleChars.length));
       } 
   }
@@ -73,7 +73,7 @@ function getPassword(){
   if((hasUpperC === true) && (hasLowerC === true) && (hasNum === false) && (hasSpecial === false)){
     var possibleChars = charSetUpper + charSetLower;
 
-    for(var i = 0; i <= length; i++){
+    for(var i = 0; i < length; i++){
       passWordEl += possibleChars.charAt(Math.floor(Math.random() * possibleChars.length));
     } 
   }
@@ -82,7 +82,7 @@ function getPassword(){
   if((hasUpperC === true) && (hasLowerC === false) && (hasNum === true) && (hasSpecial === false)){
     var possibleChars = charSetUpper + num;
 
-    for(var i = 0; i <= length; i++){
+    for(var i = 0; i < length; i++){
       passWordEl += possibleChars.charAt(Math.floor(Math.random() * possibleChars.length));
     } 
   }
@@ -91,7 +91,7 @@ function getPassword(){
   if((hasUpperC === true) && (hasLowerC === false) && (hasNum === false) && (hasSpecial === true)){
     var possibleChars = charSetUpper + special;
 
-    for(var i = 0; i <= length; i++){
+    for(var i = 0; i < length; i++){
       passWordEl += possibleChars.charAt(Math.floor(Math.random() * possibleChars.length));
     } 
   }
@@ -100,7 +100,7 @@ function getPassword(){
   if((hasUpperC === false) && (hasLowerC === true) && (hasNum === true) && (hasSpecial === false)){
     var possibleChars = charSetUpper + special;
 
-    for(var i = 0; i <= length; i++){
+    for(var i = 0; i < length; i++){
       passWordEl += possibleChars.charAt(Math.floor(Math.random() * possibleChars.length));
     } 
   }
@@ -109,7 +109,7 @@ function getPassword(){
    if((hasUpperC === false) && (hasLowerC === true) && (hasNum === false) && (hasSpecial === true)){
     var possibleChars = charSetUpper + special;
 
-    for(var i = 0; i <= length; i++){
+    for(var i = 0; i < length; i++){
       passWordEl += possibleChars.charAt(Math.floor(Math.random() * possibleChars.length));
     } 
   }
@@ -118,7 +118,7 @@ function getPassword(){
     if((hasUpperC === false) && (hasLowerC === false) && (hasNum === true) && (hasSpecial === true)){
       var possibleChars = charSetUpper + special;
   
-      for(var i = 0; i <= length; i++){
+      for(var i = 0; i < length; i++){
         passWordEl += possibleChars.charAt(Math.floor(Math.random() * possibleChars.length));
       } 
     }
@@ -127,7 +127,7 @@ function getPassword(){
      if((hasUpperC === false) && (hasLowerC === true) && (hasNum === true) && (hasSpecial === true)){
       var possibleChars = charSetLower + num + special;
   
-      for(var i = 0; i <= length; i++){
+      for(var i = 0; i < length; i++){
         passWordEl += possibleChars.charAt(Math.floor(Math.random() * possibleChars.length));
       } 
     }
@@ -136,7 +136,7 @@ function getPassword(){
     if((hasUpperC === true) && (hasLowerC === false) && (hasNum === true) && (hasSpecial === true)){
       var possibleChars = charSetUpper + num + special;
   
-      for(var i = 0; i <= length; i++){
+      for(var i = 0; i < length; i++){
         passWordEl += possibleChars.charAt(Math.floor(Math.random() * possibleChars.length));
       } 
     }
@@ -145,7 +145,7 @@ function getPassword(){
     if((hasUpperC === true) && (hasLowerC === true) && (hasNum === false) && (hasSpecial === true)){
       var possibleChars = charSetUpper + charSetLower + special;
   
-      for(var i = 0; i <= length; i++){
+      for(var i = 0; i < length; i++){
         passWordEl += possibleChars.charAt(Math.floor(Math.random() * possibleChars.length));
       } 
     }
@@ -154,7 +154,7 @@ function getPassword(){
        if((hasUpperC === true) && (hasLowerC === true) && (hasNum === true) && (hasSpecial === false)){
         var possibleChars = charSetUpper + charSetLower + num;
     
-        for(var i = 0; i <= length; i++){
+        for(var i = 0; i < length; i++){
           passWordEl += possibleChars.charAt(Math.floor(Math.random() * possibleChars.length));
         } 
       }
